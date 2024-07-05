@@ -22,7 +22,7 @@ const products = computed(() => productStore.list)
         v-for="product in products"
         :key="product.id"
         :product="product"
-        class="transition-transform transform rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl"
+        class="transition-transform duration-300 transform rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl"
       />
     </div>
   </div>
