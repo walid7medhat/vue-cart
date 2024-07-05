@@ -72,6 +72,7 @@ export const useCartStore = defineStore({
         }
       }
     },
+
     remove(productId: number) {
       if (!this.contents[productId])
         return
@@ -80,6 +81,11 @@ export const useCartStore = defineStore({
 
       if (this.contents[productId].quantity === 0)
         delete this.contents[productId]
+    },
+
+    clearCart() {
+      this.contents = {} // Clear contents in state
+      localStorage.removeItem(CART_STORAGE) // Remove from localStorage
     },
   },
 })
